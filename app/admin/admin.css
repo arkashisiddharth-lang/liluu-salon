@@ -1,0 +1,119 @@
+/* Admin dashboard styling — reuses the site's CSS variables (ivory/blush/
+   champagne/espresso/gold) so it matches the salon's visual identity, but
+   is visually distinct from the customer homepage and lives only under
+   /admin. Nothing here affects any customer-facing page. */
+
+.admin-shell{
+  min-height:100vh;
+  background:var(--ivory-deep);
+  font-family:var(--sans);
+  color:var(--espresso);
+}
+.admin-topbar{
+  background:var(--espresso);
+  color:var(--ivory);
+  padding:18px 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.admin-topbar .brand{
+  font-family:var(--serif);
+  font-size:20px;
+  letter-spacing:0.04em;
+}
+.admin-topbar .brand span{color:var(--gold-light);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;display:block;margin-top:2px;font-family:var(--sans);}
+.admin-nav{display:flex;gap:6px;flex-wrap:wrap;}
+.admin-nav a{
+  padding:9px 16px;border-radius:100px;font-size:12.5px;letter-spacing:0.04em;
+  color:rgba(251,246,239,0.75);transition:all 0.25s ease;
+}
+.admin-nav a:hover, .admin-nav a.active{background:rgba(251,246,239,0.12);color:var(--ivory);}
+.admin-signout{
+  padding:9px 18px;border-radius:100px;background:transparent;border:1px solid rgba(251,246,239,0.3);
+  color:var(--ivory);font-size:12.5px;transition:all 0.25s ease;
+}
+.admin-signout:hover{background:rgba(251,246,239,0.12);}
+
+.admin-content{max-width:1180px;margin:0 auto;padding:36px 32px 80px;}
+.admin-h1{font-family:var(--serif);font-size:32px;margin-bottom:6px;}
+.admin-sub{color:var(--espresso-soft);font-size:14px;margin-bottom:30px;}
+
+.admin-stat-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:18px;margin-bottom:40px;}
+.admin-stat-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:22px 22px;box-shadow:var(--shadow-soft);
+}
+.admin-stat-card b{font-family:var(--serif);font-size:30px;display:block;margin-bottom:4px;}
+.admin-stat-card span{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--espresso-soft);}
+
+.admin-panel{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:26px;box-shadow:var(--shadow-soft);margin-bottom:28px;
+}
+.admin-panel h2{font-family:var(--serif);font-size:22px;margin-bottom:18px;}
+
+.admin-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.admin-filters button{
+  padding:8px 16px;border-radius:100px;border:1px solid var(--line);font-size:12.5px;background:var(--ivory);
+  color:var(--espresso-soft);transition:all 0.25s ease;
+}
+.admin-filters button.active, .admin-filters button:hover{background:var(--espresso);color:var(--ivory);border-color:var(--espresso);}
+
+.admin-table{width:100%;border-collapse:collapse;font-size:13.5px;}
+.admin-table th{
+  text-align:left;padding:10px 12px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--espresso-soft);border-bottom:1px solid var(--line);
+}
+.admin-table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:middle;}
+.admin-table tr:last-child td{border-bottom:none;}
+
+.admin-badge{
+  display:inline-block;padding:4px 12px;border-radius:100px;font-size:11px;letter-spacing:0.04em;
+  text-transform:uppercase;font-weight:500;
+}
+.admin-badge.pending{background:var(--champagne-soft);color:#8a6a2b;}
+.admin-badge.confirmed{background:var(--blush-soft);color:#a3524a;}
+.admin-badge.completed{background:#dcece0;color:#2f6b45;}
+.admin-badge.cancelled{background:#f1e1e1;color:#8a3b3b;}
+
+.admin-btn{
+  padding:7px 14px;border-radius:100px;font-size:12px;border:1px solid var(--line);background:var(--ivory);
+  color:var(--espresso);transition:all 0.25s ease;margin-right:6px;margin-bottom:6px;
+}
+.admin-btn:hover{border-color:var(--gold);color:var(--gold);}
+.admin-btn.danger:hover{border-color:#b5675a;color:#b5675a;}
+.admin-btn.primary{background:var(--espresso);color:var(--ivory);border-color:var(--espresso);}
+.admin-btn.primary:hover{opacity:0.9;color:var(--ivory);}
+.admin-btn:disabled{opacity:0.5;pointer-events:none;}
+
+.admin-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.admin-field{display:flex;flex-direction:column;gap:6px;}
+.admin-field.full{grid-column:1/-1;}
+.admin-field label{font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--espresso-soft);}
+.admin-field input, .admin-field select, .admin-field textarea{
+  border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 12px;font-family:var(--sans);font-size:14px;background:var(--ivory);
+}
+
+.admin-login-wrap{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--ivory-deep);padding:24px;
+}
+.admin-login-card{
+  background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:44px;max-width:380px;width:100%;
+}
+.admin-login-card h1{font-family:var(--serif);font-size:26px;margin-bottom:6px;text-align:center;}
+.admin-login-card p.sub{text-align:center;color:var(--espresso-soft);font-size:13.5px;margin-bottom:26px;}
+.admin-login-card .admin-field{margin-bottom:16px;}
+.admin-login-card button{width:100%;margin-top:8px;padding:14px;border-radius:100px;background:var(--espresso);color:var(--ivory);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;}
+.admin-login-card button:disabled{opacity:0.6;}
+.admin-error{color:#b5675a;font-size:13px;margin-bottom:12px;}
+.admin-empty{color:var(--espresso-soft);font-size:14px;padding:20px 0;text-align:center;}
+
+@media(max-width:720px){
+  .admin-form-grid{grid-template-columns:1fr;}
+  .admin-content{padding:26px 16px 60px;}
+  .admin-table{font-size:12.5px;}
+  .admin-table th, .admin-table td{padding:8px 6px;}
+}
