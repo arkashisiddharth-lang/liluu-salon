@@ -4,6 +4,7 @@ import Nav from '@/components/Nav';
 import MobileMenu from '@/components/MobileMenu';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import Lightbox from '@/components/Lightbox';
+import Chatbot from '@/components/Chatbot';
 
 export const metadata = {
   title: 'LILLU SALON — Beauty, Refined.',
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         <MobileMenu />
         {children}
         <WhatsAppFloat />
+        <Chatbot />
         <Lightbox />
         <Script src="/site.js" strategy="afterInteractive" />
       </body>
