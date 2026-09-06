@@ -27,8 +27,8 @@ export default function RootLayout({ children }) {
         <MobileMenu />
         {children}
         <WhatsAppFloat />
-        <Chatbot />
         <Lightbox />
+        <Chatbot />
         <Script src="/site.js" strategy="afterInteractive" />
       </body>
     </html>

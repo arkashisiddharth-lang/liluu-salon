@@ -1,3 +1,15 @@
+// ---- Premium scroll progress ----
+const progress = document.createElement('div');
+progress.className = 'scroll-progress';
+progress.setAttribute('aria-hidden', 'true');
+document.body.appendChild(progress);
+function updateScrollProgress(){
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+}
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+updateScrollProgress();
+
 // ---- Nav scroll state ----
 const nav = document.getElementById('nav');
 if (nav) {
